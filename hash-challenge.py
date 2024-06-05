@@ -1,5 +1,4 @@
 import json
-import time
 
 import requests
 import base64
@@ -10,9 +9,6 @@ from hashlib import blake2b
 def solve_hash_challenge(challenge_id, message):
     # Decode base64
     message = base64.b64decode(message)
-
-    attempt = 0  # Track number of attempts
-    dots = ""  # String to hold dots
 
     # Find prefix to make blake2 hash with 2 leading bytes equal to 0
     prefix = b''
